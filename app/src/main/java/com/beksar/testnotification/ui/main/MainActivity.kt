@@ -5,6 +5,7 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -47,6 +48,13 @@ class MainActivity : AppCompatActivity(), RecyclerViewListener {
         viewMode = ActivityViewModel()
         adapterMy = RecyclerAdapter(this)
         initRecyclerView()
+        initClick()
+    }
+
+    private fun initClick() {
+        swipe_recycler.setOnRefreshListener {
+            initRecyclerView()
+        }
     }
 
     //Слушатель RecyclerView
@@ -60,6 +68,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewListener {
         viewMode.news().observe(this, Observer {
             when(it.status){
                 Status.SUCCESS ->{
+                    layout_recycler_sw.visibility = View.GONE
                     val item: ArrayList<ResultRecyclerModel> = arrayListOf()
                     for (key in it.data!!.data!!.keys) {
                         item.add(ResultRecyclerModel(it.data.data?.get(key)!!.country.toString(), it.data.data?.get(key)!!.region.toString(), key))
@@ -72,9 +81,13 @@ class MainActivity : AppCompatActivity(), RecyclerViewListener {
                         loadNextPage()
                         alert.hide()
                     }, 1000)
+                    swipe_recycler.isRefreshing = false
                 }
                 Status.NETWORK, Status.ERROR ->{
+                    layout_recycler_sw.visibility = View.VISIBLE
+                    alert.hide()
                     Toast.makeText(this, "Ошибка: " + it.msg, Toast.LENGTH_LONG).show()
+                    swipe_recycler.isRefreshing = false
                 }
             }
         })
