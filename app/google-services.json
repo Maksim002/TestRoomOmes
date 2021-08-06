@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "831820353087",
+    "firebase_url": "https://firstproject-d8760.firebaseio.com",
+    "project_id": "firstproject-d8760",
+    "storage_bucket": "firstproject-d8760.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831820353087:android:a7bef1214ad6aecaf3b28a",
+        "android_client_info": {
+          "package_name": "com.beksar.testnotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831820353087-a72pe7roijv848ood11p379ao67ovliv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGqhqZPvBAuAy3hDKnDfeds8IKTBD7KCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831820353087-a72pe7roijv848ood11p379ao67ovliv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
