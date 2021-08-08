@@ -1,10 +1,7 @@
 package com.beksar.testnotification.ui.main
 
-import android.annotation.SuppressLint
-import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,15 +13,12 @@ import com.beksar.testnotification.adapter.model.RecyclerModel
 import com.beksar.testnotification.adapter.model.ResultRecyclerModel
 import com.beksar.testnotification.extension.roomModel
 import com.beksar.testnotification.extension.writingDatabase
-import com.beksar.testnotification.service.model.ModelRoom
 import com.beksar.testnotification.utils.LoadingAlert
 import com.beksar.testnotification.utils.Pagination
 import com.example.testroomkotlin.AppDataBase
 import com.example.testtask.adapter.RecyclerAdapter
 import com.timelysoft.tsjdomcom.service.Status
 import kotlinx.android.synthetic.main.activity_main.*
-import org.json.JSONObject
-import kotlin.system.measureTimeMillis
 
 
 class MainActivity : AppCompatActivity(), RecyclerViewListener {
